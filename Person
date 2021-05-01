@@ -1,0 +1,106 @@
+package com.bl.Amodel;
+
+public class Person {
+	public String firstname;
+	public String lastname;
+
+	public String age;
+	public String city;
+
+	public String pincode;
+	public String mobile_no;
+	public String email;
+	
+	public Person(String firstname,String lastname,String age,String city,String pincode,String mobile_no,String email) {
+	    this.firstname=firstname;
+	    this.lastname=lastname;
+	    this.age=age;
+	    this.city=city;
+	    this.pincode=pincode;
+	    this.mobile_no=mobile_no;
+	    this.email=email;
+	
+	}
+	
+	
+	public String getFirstname() {
+		return firstname;
+	}
+
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+
+	public String getLastname() {
+		return lastname;
+	}
+
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+
+	public String getAge() {
+		return age;
+	}
+
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	public String getPincode() {
+		return pincode;
+	}
+
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+
+	public String getMobile_no() {
+		return mobile_no;
+	}
+
+
+	public void setMobile_no(String mobile_no) {
+		this.mobile_no = mobile_no;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	@Override
+	public String toString() {
+		
+		return "Person{" +
+                "firstname='" + firstname  +"lastname='" + lastname+
+                "age='" + age+ "city='" + city+"pincode='" + pincode+ "mobile_no='" + mobile_no+
+                "email='" + email + '\'' +
+                '}';
+	}
+
+}
