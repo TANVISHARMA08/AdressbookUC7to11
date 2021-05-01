@@ -1,0 +1,85 @@
+package com.bl.Aservice;
+
+import com.bl.Amodel.Person;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class AddressBookService implements IAddressBookService {
+
+    public List<Person> addressBookList;
+    
+    public AddressBookService() {
+    	addressBookList=new ArrayList<>();
+	}
+    
+	@Override
+	public boolean addPerson(Person person) {
+
+		return addressBookList.add(person);
+	}
+	
+	@Override
+	public boolean editPerson(String editname,Scanner scanner) {
+		
+		for (int i = 0; i < addressBookList.size(); i++) {
+			if(addressBookList.get(i).firstname.equalsIgnoreCase(editname))
+			{
+
+            	System.out.println("Enter the FirstName");
+            	String firstname = scanner.nextLine();
+            	
+            	System.out.println("Enter Lastname ");
+                String lastname = scanner.nextLine();
+
+                
+                System.out.println("enter AGE -- ");
+                String  age = scanner.nextLine();
+
+                System.out.println("enter city -- ");
+                String city = scanner.nextLine();
+
+                System.out.println("enter pincode -- ");
+                String pincode = scanner.nextLine();
+
+
+                System.out.println("enter mobile no. -- ");
+                String mobile_no = scanner.nextLine();
+
+                System.out.println("enter email -- ");
+                String email = scanner.nextLine();
+
+   			addressBookList.get(i).setFirstname(firstname);
+   			addressBookList.get(i).setLastname(lastname);
+   			addressBookList.get(i).setAge(age);
+   			addressBookList.get(i).setCity(city);
+   			addressBookList.get(i).setPincode(pincode);
+   			addressBookList.get(i).setMobile_no(mobile_no);
+   			addressBookList.get(i).setEmail(email);
+   			System.out.println("Contact Edit Successfully");
+   			return true;
+            }
+		}
+		
+		return false;
+	} 
+
+	@Override
+	public boolean deletePerson(String firstname) {
+		 for (int i = 0; i < addressBookList.size(); i++) {
+	            if (addressBookList.get(i).firstname.equalsIgnoreCase(firstname)) {
+	                addressBookList.remove(i);
+	                return true;
+	            }
+		   }
+	            return false;	
+	} 
+
+	@Override
+	public List<Person> getAddressBook() {
+		
+		return addressBookList;
+	}
+
+}
