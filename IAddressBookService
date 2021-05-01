@@ -1,0 +1,19 @@
+package com.bl.Aservice;
+
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.bl.Amodel.Person;
+
+public interface IAddressBookService {
+
+	boolean addPerson(Person person);
+	
+	boolean editPerson(String firstname,Scanner scanner);
+
+    boolean deletePerson(String name);
+
+    List<Person> getAddressBook();
+
+}
